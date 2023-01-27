@@ -144,7 +144,8 @@ export default function NFTBox({
                     width="200"
                   ></Image>
                   <div className="font-bold">
-                    {ethers.utils.formatUnits(price, "ether")} ETH
+                    {ethers.utils.formatUnits(price, "ether")} ETH (Click To
+                    Buy)
                   </div>
                 </div>
               </div>

@@ -33,12 +33,13 @@ export default function UpdateListingModal({
     params: {
       nftAddress: nftAddress,
       tokenId: tokenId,
-      newPrice: ethers.utils.parseEther(priceToUpdateListingWith || "0"),
+      newPrice: ethers.utils.parseEther(priceToUpdateListingWith || "0.01"),
     },
   });
 
   return (
     <Modal
+      title="Update Price"
       isVisible={isVisible}
       onCancel={onClose}
       onCloseButtonPressed={onClose}
@@ -51,14 +52,21 @@ export default function UpdateListingModal({
         });
       }}
     >
-      <Input
-        label="update price"
-        name="New Listing price"
-        type="number"
-        onChange={(event) => {
-          setPriceToUpdateListingWith(event.target.value);
+      <div
+        style={{
+          padding: "20px 0 20px 0",
         }}
-      ></Input>
+      >
+        <Input
+          label="update price"
+          name="New Listing price"
+          placeholder="0.01"
+          type="number"
+          onChange={(event) => {
+            setPriceToUpdateListingWith(event.target.value);
+          }}
+        ></Input>
+      </div>
     </Modal>
   );
 }

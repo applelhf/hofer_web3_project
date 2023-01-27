@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="container mx-auto">
       <h1 className="py-4 px-4 font-bold text-2xl">Recently Listed</h1>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap gap-10">
         {isWeb3Enabled && chainId ? (
           loading || !listedNfts ? (
             <div>Loading....</div>

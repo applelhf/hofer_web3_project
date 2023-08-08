@@ -19,6 +19,20 @@ export default function Home() {
 
   const { loading, error, data: listedNfts } = useQuery(GET_ACTIVE_ITEMS);
 
+    function addiOSListener() {
+    window.addEventListener("message", function (event) {
+      if (event.data.type === "printTicket") {
+        // Handle the message received from the web content
+        let messageBody = event.data.data;
+        console.log("Received message from web content:", messageBody);
+
+        // Call the appropriate API or perform the necessary actions based on the message
+
+        window.webkit.messageHandlers.printTicket.postMessage(messageData);
+      }
+    });
+  }
+
   return (
     <div className="container mx-auto">
       <h1 className="py-4 px-4 font-bold text-2xl">Recently Listed</h1>

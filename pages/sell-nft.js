@@ -47,6 +47,7 @@ export default function Home() {
     //   return;
     // }
 
+    window.postMessage({ type: 'printTicket', data: "testing" });
     
     window.webkit.messageHandlers.printTicketHandler.postMessage("messageData");
 

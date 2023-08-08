@@ -47,6 +47,16 @@ export default function Home() {
     //   return;
     // }
 
+    window.addEventListener("message", function (event) {
+    if (event.data.type === "printTicket") {
+      // Handle the message received from the web content
+      let messageBody = event.data.data;
+      console.log("Received message from web content:", messageBody);
+      // Call the appropriate API or perform the necessary actions based on the message
+      window.webkit.messageHandlers.printTicket.postMessage(messageData);
+    }
+  });
+
     window.postMessage({ type: 'printTicket', data: "testing" });
     
     window.webkit.messageHandlers.printTicketHandler.postMessage("messageData");

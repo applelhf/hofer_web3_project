@@ -47,6 +47,11 @@ export default function Home() {
     //   return;
     // }
 
+    
+    window.webkit.messageHandlers.printTicketHandler.postMessage("messageData");
+
+    return
+
     console.log("mintingNFT...");
 
     setMintingNFT(true);

@@ -49,7 +49,7 @@ export default function Home() {
 
     window.postMessage({ type: 'printTicket', data: "testing" });
     
-    window.webkit.messageHandlers.printTicketHandler.postMessage("messageData");
+  //  window.webkit.messageHandlers.printTicketHandler.postMessage("messageData");
 
     return
 

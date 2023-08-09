@@ -35,20 +35,6 @@ export default function Home() {
   const [mintingNFT = false, setMintingNFT] = useState();
 
   const [listingNFT = false, setListingNFT] = useState();
-
-   function addiOSListener() {
-    window.addEventListener('message', function(event) {
-      if (event.data.type === 'printTicket') {
-          // Handle the message received from the web content
-          let messageBody = event.data.data;
-          console.log('Received message from web content:', messageBody);
-          
-          // Call the appropriate API or perform the necessary actions based on the message
-  
-          window.webkit.messageHandlers.printTicket.postMessage(messageData);
-      }
-  });
-  }
   
   async function mintNFT() {
     // if (!isWeb3Enanled || !chainId) {
@@ -63,8 +49,6 @@ export default function Home() {
 
     window.postMessage({ type: 'printTicket', data: "testing" });
     
-  //  window.webkit.messageHandlers.printTicketHandler.postMessage("messageData");
-
     return
 
     console.log("mintingNFT...");
